@@ -1,0 +1,44 @@
+<div>
+  <div class="modal-header py-2 align-items-center">
+    <h5 class="text-center m-0 p-0">Añadir Municipio</h5>
+    <fa-icon class="close pull-right cursor" size="1x" (click)="hideModal()" [icon]="faTimes"></fa-icon>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="form" (submit)="onSubmit()" >
+      <label class="mt-1">Nombre</label>
+      <input type="text" class="form-control my-2" formControlName="name">
+
+      <label class="mt-1">Cedula de Identidad</label>
+      <input type="text" class="form-control my-2" formControlName="ci">
+
+      <label class="mt-1">Fecha de Nacimiento</label>
+      <input type="date" class="form-control my-2" formControlName="date_birth">
+
+      <label class="mt-1">Profesion</label>
+      <input type="text" class="form-control my-2" formControlName="profession">
+
+      <label class="mt-1">Dirección</label>
+      <input type="text" class="form-control my-2" formControlName="address">
+
+      <label class="mt-1">Telefono</label>
+      <input type="text" class="form-control my-2" formControlName="phone">
+
+      <label class="mt-1">Sexo</label>
+      <select  class="form-control my-2" formControlName="gender">
+        <option value="M">Masculino</option>
+        <option value="F">Femenino</option>
+      </select>
+
+      <label class="mt-1">Municipio</label>
+      <select  class="form-control my-2" formControlName="municipalityId">
+        <option *ngFor="let item of itemsMun" [value]="item.id">{{item?.name}}</option>
+      </select>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-outline-success" [disabled]="!form.valid">Guardar</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+

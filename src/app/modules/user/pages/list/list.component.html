@@ -1,0 +1,26 @@
+<div class="container p-5">
+  <div class="d-flex align-items-center justify-content-between">
+    <h3>Usuarios</h3>
+    <button type="button" class="btn btn-outline-success" (click)="openModal()">Nuevo Usuario</button>
+  </div>
+
+  <ul class="list-group mt-3">
+    <li class="list-group-item d-flex flex-wrap justify-content-between align-items-center" *ngFor="let item of items">
+      <div>
+        <h5>{{item.name}}</h5>
+        <p class="text-muted m-0 p-0"><small>C.I: </small> {{item?.ci}}</p>
+        <p class="text-muted m-0 p-0"><small>F. Nacimiento: </small> {{item?.date_birth | date:'mediumDate'}}</p>
+        <p class="text-muted m-0 p-0"><small>Profesion: </small> {{item?.profession}}</p>
+        <p class="text-muted m-0 p-0"><small>Direccion: </small> {{item?.address}}</p>
+        <p class="text-muted m-0 p-0"><small>Telefono: </small> {{item?.phone}}</p>
+        <p class="text-muted m-0 p-0"><small>Sexo: </small> {{item?.gender === 'M' ? 'Masculino' : 'Femenino'}}</p>
+        <p class="text-muted m-0 p-0"><small>Municipio: </small> {{item?.municipality?.name}}</p>
+      </div>
+      <div>
+        <fa-icon class="cursor me-3" size="1x" (click)="openModalEdit(item)" [icon]="faEdit"></fa-icon>
+        <fa-icon class="cursor me-3" size="1x" (click)="deleteItem(item)" [icon]="faTrashAlt"></fa-icon>
+      </div>
+    </li>
+  </ul>
+
+</div>

@@ -1,0 +1,18 @@
+<div>
+  <div class="modal-header py-2 align-items-center">
+    <h5 class="text-center m-0 p-0">Añadir Municipio</h5>
+    <fa-icon class="close pull-right cursor" size="1x" (click)="hideModal()" [icon]="faTimes"></fa-icon>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="form" (submit)="onSubmit()" >
+      <label class="mt-1">Nombre</label>
+      <input type="text" class="form-control my-2" placeholder="Jose Maria Vargas" formControlName="name">
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-outline-success" [disabled]="!form.valid">Guardar</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+

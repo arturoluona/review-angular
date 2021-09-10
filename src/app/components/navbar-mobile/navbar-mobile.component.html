@@ -1,0 +1,18 @@
+<div *ngIf="!isOpen" class="container-fluid py-3 px-4 bg-dark d-flex justify-content-between align-items-center">
+  <div>
+    <a class="text-decoration-none text-white fs-5" routerLink="/">Review Angular</a>
+  </div>
+  <div class="text-white">
+    <fa-icon size="2x" (click)="isOpen = true" [icon]="faBars"></fa-icon>
+  </div>
+</div>
+
+<div *ngIf="isOpen" class="container-fluid vh-100 p-5 pt-4">
+  <div class="text-end"><fa-icon (click)="isOpen = false" size="2x" [icon]="faTimes"></fa-icon></div>
+  <div >
+    <a class="text-decoration-none ms-3 text-dark fs-5" (click)="isOpen = false" routerLink="/users">Usuarios</a><br><br>
+    <a class="text-decoration-none ms-3 text-dark fs-5" (click)="isOpen = false" routerLink="/vehicles">Vehiculos</a><br><br>
+    <a class="text-decoration-none ms-3 text-dark fs-5" (click)="isOpen = false" routerLink="/marks">Marcas</a><br><br>
+    <a class="text-decoration-none ms-3 text-dark fs-5" (click)="isOpen = false" routerLink="/municipality">Municipios</a>
+  </div>
+</div>
